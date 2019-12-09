@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل کاربری</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    <link rel="stylesheet" href="{% static 'panel/css/panel_base.css' %}">
+    <link rel="stylesheet" href="{% static 'panel/css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'panel/css/content_header.css' %}">
+    <link rel="stylesheet" href="{% static 'panel/css/content_base.css' %}">
+    <link rel="stylesheet" href="https://res.cloudinary.com/dclfeq8cv/raw/upload//bibot/font/css/fontiran.min.css">
+    <link rel="stylesheet" href="https://res.cloudinary.com/dclfeq8cv/raw/upload//bibot/font/css/style.min.css">
+    {% block styles %}{% endblock %}
+</head>
+<body>
+<div class='dashboard rtl-dashboard'>
+    {% include 'panel_menu.html' %}
+    <div class='dashboard-content'>
+        {% include 'panel_header.html' %}
+        {% block pages %}{% endblock %}
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="{% static 'panel/js/translate.js' %}"></script>
+<script src="{% static 'panel/js/panel_base.js' %}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

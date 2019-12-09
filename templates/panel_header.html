@@ -1,0 +1,86 @@
+{% load static %}
+<div class='dashboard-card w-100 content-header'>
+    <div class='content-header-left'>
+        <div class='menu-toggle-btn'>
+            <label>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </label>
+        </div>
+        <a href='http://google.com' class='balance'>
+            <p class="translate" data-translate="balance"></p>
+            <span>۱۰٫۰۰۰</span>
+            <p class="translate" data-translate="toman"></p>
+        </a>
+    </div>
+    <div class='content-header-center'>
+        <a href='https://google.com'>
+            <img src='{% static 'panel/image/sso.png' %}'/>
+        </a>
+    </div>
+    <div class='content-header-right'>
+        <div class='dropdown language-dropdown'>
+            <div class='dropdown-btn'>
+                <img src='https://res.cloudinary.com/dclfeq8cv/image/upload//test/iran.svg'/>
+                <img class='hide' src='https://res.cloudinary.com/dclfeq8cv/image/upload/v1/test/usa.svg'/>
+            </div>
+        </div>
+        <div class='dropdown notification-dropdown'>
+            <div class='dropdown-btn'>
+                <i class="material-icons">
+                    notifications
+                </i>
+            </div>
+            <div class='dropdown-content hide'>
+                <ul>
+                    <li>
+                        <a href='https://google.com'>
+                  <span class='notification-image'>
+                    <img src="https://bibot.ir/static/images/admin.png" alt="Profile Image">
+                  </span>
+                            <span>
+                    <span class="notification-sender translate" data-translate='admin'></span>
+                  </span>
+                            <span class="notification-message">سلام پسر! حالت چطوره؟</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='https://google.com' class='all-notification translate'
+                           data-translate='show_all_messages'></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class='dropdown profile-dropdown'>
+            <div class='dropdown-btn'>
+                <i class="material-icons">
+                    account_circle
+                </i>
+                <span>
+              مرتضی ابوالقاسمی
+            </span>
+            </div>
+            <div class='dropdown-content hide'>
+                <ul>
+                    <li>
+                        <a href='#profile' class='change-page' data-target='profile-page'>
+                            <i class="material-icons">
+                                account_box
+                            </i>
+                            <span class="translate" data-translate="profile"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='https://google.com'>
+                            <i class="material-icons">
+                                exit_to_app
+                            </i>
+                            <span class="translate" data-translate="logout"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

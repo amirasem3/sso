@@ -1,0 +1,25 @@
+{% load static %}
+<div class='menu'>
+    <div class='menu-header'>
+        <img src='{% static 'panel/image/sso.png' %}'/>
+    </div>
+    <div class='menu-bar selected'>
+        <div class='selector-row'>
+            <div></div>
+        </div>
+        <ul class='menu-list'>
+            <li class='activate change-page' data-target='dashboard-page'>
+                <i class="material-icons">accessibility</i>
+                <span class='translate' data-translate='dashboard'></span>
+            </li>
+            <li class='change-page' data-target='campains-page'>
+                <i class="material-icons">accessibility</i>
+                <span class='translate' data-translate='manage-campains'></span>
+            </li>
+            <li class='change-page' data-target='transactions-page'>
+                <i class="material-icons">accessibility</i>
+                <span class='translate' data-translate='transaction_reports'></span>
+            </li>
+        </ul>
+    </div>
+</div>

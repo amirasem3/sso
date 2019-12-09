@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>احراز هویت sso</title>
+</head>
+<body>
+<div id='sso-btn' style="background: red; width: fit-content; padding: 10px 30px; color: white">ورود</div>
+<script type="text/javascript">
+    document.getElementById('sso-btn').addEventListener('click', function () {
+        var url = 'http://localhost/o/authorize?response_type=code&client_id=e56D38L1FKp02fe03tH1QrjRDVw7sVAeqeme0RBu&scope=read&redirect_uri=http://alaki.com';
+        window.open(url, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=130,left=100,width=400,height=500");
+    })
+</script>
+</body>
+</html>

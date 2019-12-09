@@ -1,0 +1,184 @@
+.menu-header {
+    z-index: 100;
+    margin: 20px 0 25px;
+    height: 50px;
+    position: relative;
+}
+
+.menu-header img {
+    height: 100%;
+    margin: auto;
+    display: block;
+}
+
+.menu-bar {
+    position: relative;
+    width: 95%;
+    height: 100%;
+}
+
+.rtl-dashboard .menu-bar {
+    margin-right: 5%;
+}
+
+.ltr-dashboard .menu-bar {
+    margin-left: 5%;
+}
+
+.selector-row {
+    display: none;
+}
+
+.selected .selector-row {
+    display: block;
+    position: absolute;
+    top: -10px;
+    background: white;
+    width: 100%;
+    height: 50px;
+    transition: 0.5s;
+    border-radius: 50px 0 0 50px;
+}
+
+.rtl-dashboard .selector-row {
+    left: 0;
+    border-radius: 0 50px 50px 0;
+}
+
+.ltr-dashboard .selector-row {
+    left: 0;
+    border-radius: 50px 0 0 50px;
+}
+
+.selector-row > div::before,
+.selector-row > div::after,
+.selector-row::before,
+.selector-row::after {
+    content: "";
+    position: absolute;
+}
+
+.rtl-dashboard .selector-row > div::before,
+.rtl-dashboard .selector-row > div::after,
+.rtl-dashboard .selector-row::before,
+.rtl-dashboard .selector-row::after {
+    left: 0;
+}
+
+.ltr-dashboard .selector-row > div::before,
+.ltr-dashboard .selector-row > div::after,
+.ltr-dashboard .selector-row::before,
+.ltr-dashboard .selector-row::after {
+    right: 0;
+}
+
+.rtl-dashboard .selector-row::before,
+.rtl-dashboard .selector-row::after {
+    left: 0;
+}
+
+.ltr-dashboard .selector-row::before,
+.ltr-dashboard .selector-row::after {
+    right: 0;
+}
+
+.selector-row::before {
+    background: white;
+    width: 15px;
+    height: 90px;
+}
+
+.selector-row::before {
+    top: -20px;
+}
+
+.selector-row > div::before,
+.selector-row > div::after {
+    background: var(--color-1);
+    z-index: 10;
+    width: 100%;
+    height: 25px;
+}
+
+.selector-row > div::before {
+    bottom: 100%;
+}
+
+.rtl-dashboard .selector-row > div::before {
+    border-radius: 0 0 0 10px;
+}
+
+.ltr-dashboard .selector-row > div::before {
+    border-radius: 0 0 10px 0;
+}
+
+.selector-row > div::after {
+    top: 100%;
+}
+
+.rtl-dashboard .selector-row > div::after {
+    border-radius: 10px 0 0 0;
+}
+
+.ltr-dashboard .selector-row > div::after {
+    border-radius: 0 10px 0 0;
+}
+
+.menu-list {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    z-index: 15;
+    position: absolute;
+    top: 0;
+    width: 95%;
+}
+
+.rtl-dashboard .menu-list {
+    left: 0;
+}
+
+.ltr-dashboard .menu-list {
+    right: 0;
+}
+
+.menu-list li {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin: 0 10px 40px;
+    transition: 0.3s;
+    padding-bottom: 5px;
+}
+
+.menu-list li:hover {
+    cursor: pointer;
+    box-shadow: 8px 12px 4px -12px yellow;
+}
+
+.menu-list > li > i {
+    background: #888;
+    border-radius: 50%;
+    padding: 5px;
+    transition: 0.5s;
+}
+
+.menu-list > li > span {
+    transition: 0.5s;
+}
+
+.rtl-dashboard .menu-list > li > span {
+    margin-right: 10px;
+}
+
+.ltr-dashboard .menu-list > li > span {
+    margin-left: 10px;
+}
+
+.selected .menu-list > li.activate > i {
+    background: var(--color-1);
+}
+
+.selected .menu-list > li.activate > span {
+    color: var(--color-1);
+}

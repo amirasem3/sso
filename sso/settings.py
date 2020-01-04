@@ -155,6 +155,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "sso/static")
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT =os.path.join(BASE_DIR, 'accounting/medias')
+
 LOGIN_URL = '/auth/start_login_view'
 
 OAUTH2_PROVIDER = {

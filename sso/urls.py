@@ -16,15 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.staticfiles import views
 from django.urls import path, include, re_path
-
-from sso import settings
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('panel/', include('panel.urls')),
     path('auth/', include('accounting.urls')),
     path('admin/', admin.site.urls),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     urlpatterns += [

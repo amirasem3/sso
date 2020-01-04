@@ -24,7 +24,7 @@ class Profile(models.Model):
     national = models.CharField(max_length=20, null=True)
     phone_verified = models.BooleanField(default=False)
     using_sites = models.ManyToManyField('ConsumerSite', related_query_name='users', related_name='users', blank=True)
-
+    image = models.ImageField(upload_to='user_photos', blank=True)
 
 class ConsumerSite(models.Model):
     owners = models.ManyToManyField(Profile, related_query_name='providingSites', related_name='providingSites')

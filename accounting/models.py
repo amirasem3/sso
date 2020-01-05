@@ -12,19 +12,21 @@ def get_choices(a):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, primary_key=True, on_delete=models.CASCADE, related_name='Profile')
-    name = models.CharField(max_length=20, null=True)
-    phone = PhoneNumberField(null=False, blank=False, unique=True)
-    email = models.EmailField(max_length=70, null=True, unique=True)
-    address = models.TextField(max_length=500, null=True)
-    gender = models.CharField(max_length=5, null=True)
-    bio = models.TextField(max_length=500, null=True)
-    born = models.DateField(blank=True, null=True)
-    height = models.IntegerField(blank=True, null=True)
-    weight = models.IntegerField(blank=True, null=True)
-    national = models.CharField(max_length=20, null=True)
-    phone_verified = models.BooleanField(default=False)
-    using_sites = models.ManyToManyField('ConsumerSite', related_query_name='users', related_name='users', blank=True)
-    image = models.ImageField(upload_to='user_photos', blank=True)
+    name = models.CharField(max_length=20, null=True, verbose_name="نام")
+    phone = PhoneNumberField(null=False, blank=False, unique=True, verbose_name="شماره تماس")
+    email = models.EmailField(max_length=70, null=True, unique=True, verbose_name="پست الکترونیکی")
+    address = models.TextField(max_length=500, null=True, verbose_name="آدرس منزل")
+    gender = models.CharField(max_length=5, null=True, verbose_name="جنسیت")
+    bio = models.TextField(max_length=500, null=True, verbose_name="زندگی نامه")
+    born = models.DateField(blank=True, null=True, verbose_name="تاریخ تولد به میلادی")
+    height = models.IntegerField(blank=True, null=True, verbose_name="قد بر حسب سانتی متر")
+    weight = models.IntegerField(blank=True, null=True, verbose_name="وزن برحسب کیلوگرم")
+    national = models.CharField(max_length=20, null=True, verbose_name="ملیت")
+    phone_verified = models.BooleanField(default=False, verbose_name=" تلفن شما تایید شده است")
+    using_sites = models.ManyToManyField('ConsumerSite', related_query_name='users', related_name='users', blank=True,
+                                         verbose_name="سایت های مورد استفاده")
+    image = models.ImageField(upload_to='user_photos', blank=True, verbose_name="تصویر شما")
+
 
 class ConsumerSite(models.Model):
     owners = models.ManyToManyField(Profile, related_query_name='providingSites', related_name='providingSites')

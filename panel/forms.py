@@ -3,8 +3,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 import sys
 
+from django.forms import TextInput, Textarea, NumberInput, EmailInput, DateInput, CheckboxInput, NullBooleanSelect, \
+    SelectDateWidget, FileInput, ClearableFileInput, SelectMultiple
+
 import accounting
 from accounting.models import Profile, field_types, DynamicField
+
+
 
 
 class ProfileForm(forms.ModelForm):
@@ -38,6 +43,49 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         fields = '__all__'
         exclude = ('user',)
+        widgets = {
+            'name': TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'email': EmailInput(attrs={
+                'class': 'form-control'
+            }),
+            'phone': TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'national': TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'gender': TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'address': Textarea(attrs={
+                'class': 'form-control'
+            }),
+            'bio': Textarea(attrs={
+                'class': 'form-control'
+            }),
+            'height': NumberInput(attrs={
+                'class': 'form-control'
+            }),
+            'weight': NumberInput(attrs={
+                'class': 'form-control'
+            }),
+            'born': SelectDateWidget(attrs={
+                'class': 'form-control'
+            }),
+            'phone_verified': NullBooleanSelect(attrs={
+                'class': 'form-control'
+            }),
+            'image': FileInput(attrs={
+                'class': 'form-control'
+            }),
+            'using_sites': SelectMultiple(attrs={
+                'class': 'form-control'
+            }),
+
+
+        }
 
 
 class EnteranceForm(forms.Form):

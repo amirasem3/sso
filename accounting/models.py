@@ -20,7 +20,7 @@ class Profile(models.Model):
     bio = models.TextField(max_length=500, null=True, verbose_name="زندگی نامه")
     born = models.DateField(blank=True, null=True, verbose_name="تاریخ تولد به میلادی")
     height = models.IntegerField(blank=True, null=True, verbose_name="قد بر حسب سانتی متر")
-    weight = models.IntegerField(blank=True, null=True, verbose_name="وزن برحسب کیلوگرم")
+    weight = models.IntegerField(blank=Trues, null=True, verbose_name="وزن برحسب کیلوگرم")
     national = models.CharField(max_length=20, null=True, verbose_name="ملیت")
     phone_verified = models.BooleanField(default=False, verbose_name=" تلفن شما تایید شده است")
     using_sites = models.ManyToManyField('ConsumerSite', related_query_name='users', related_name='users', blank=True,

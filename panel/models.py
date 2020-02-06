@@ -19,3 +19,8 @@ class ConsumerSiteAllowedField(models.Model):
     class Meta:
         unique_together = ('site', 'field_name')
 
+class EmailTasks(models.Model):
+    date_and_time = models.CharField(max_length=20, default='2000-01-01T00:00:00')
+    to = models.CharField(max_length=50)
+    subject = models.CharField(max_length=100)
+    message = models.CharField(max_length=1000)
